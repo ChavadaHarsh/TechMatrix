@@ -7,13 +7,13 @@
     >
         <Navigation />
     </header>
-    <main class="pt-25 h-screen">
+    <main class="pt-25 h-screen w-full">
         <router-view />
     </main>
 </template>
 
 <script>
-import Navigation from "./components/Navigation.vue";
+import Navigation from "./components/navigation.vue";
 
 export default {
     name: "AppHeader",

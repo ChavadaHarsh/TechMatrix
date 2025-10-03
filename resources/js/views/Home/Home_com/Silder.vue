@@ -1,14 +1,21 @@
 <template>
-    <div class="relative w-full h-[600px] rounded-lg px-40 overflow-hidden">
+    <div
+        class="relative w-full h-[500px] lg:h-[600px] rounded-lg pl-10 lg:pl-20 pr-24 lg:pr-36 overflow-hidden"
+    >
         <!-- Slides -->
-        <div class="relative h-full">
+        <div
+            class="relative h-full cursor-pointer"
+            @mouseenter="stopAutoPlay"
+            @mouseleave="startAutoPlay"
+        >
             <div
                 v-for="(image, index) in banners"
                 :key="index"
-                class="absolute inset-0 transform transition-transform duration-300 ease-in-out"
-                :class="{
-                    'translate-y-0 z-10 opacity-100': currentIndex === index, // Active slide
-                    'translate-y-full opacity-0': currentIndex !== index, // Hidden slide (starts below and moves up)
+                class="absolute inset-0 transition-transform duration-700 ease-in-out"
+                :style="{
+                    transform: `translateY(${(index - currentIndex) * 100}%)`,
+                    opacity: currentIndex === index ? 1 : 0.8,
+                    zIndex: currentIndex === index ? 10 : 0,
                 }"
             >
                 <img
@@ -21,16 +28,27 @@
 
         <!-- Indicators -->
         <div
-            class="absolute z-30 flex flex-row gap-3 top-100 right-8 -translate-y-1/2 rotate-90 cursor-pointer"
+            class="absolute z-30 flex flex-row gap-3 top-70 right-0 translate-x-38 lg:translate-x-26 -translate-y-20 lg:-translate-y-10 rotate-90 cursor-pointer duration-300"
         >
-            <div class="h-1 w-30 bg-gray-200"></div>
+            <h3
+                class="text-lg -translate-y-2 translate-x-10 font-medium text-gray-400 rotate-180"
+            >
+                <span class="text-[#00B5AC]"> 0{{ currentIndex + 1 }}</span
+                >/0{{ banners.length }}
+            </h3>
+            <div class="h-1 w-64 translate-x-10 bg-gray-200"></div>
             <button
                 v-for="(image, index) in banners"
                 :key="'indicator-' + index"
-                class="w-1 h-8 rounded-sm"
+                class="relative w-1 h-8 rounded-sm cursor-pointer duration-300 overflow-hidden group hover:bg-[#00B5AC]"
                 :class="currentIndex === index ? 'bg-[#00B5AC]' : 'bg-gray-400'"
                 @click="goToSlide(index)"
-            ></button>
+            >
+                <!-- Hover underline effect -->
+                <span
+                    class="absolute bottom-0 left-0 h-[2px] bg-[#00B5AC] w-0 group-hover:w-full transition-all duration-500"
+                ></span>
+            </button>
         </div>
     </div>
 </template>
