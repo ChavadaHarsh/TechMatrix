@@ -1,13 +1,13 @@
 <template>
     <header
         :class="[
-            'fixed top-0 left-0 w-full z-50 bg-white  transition-transform duration-500',
+            'sticky top-0 left-0 w-full z-50 bg-white  transition-transform duration-500 overflow-hidden',
             isHidden ? '-translate-y-full' : 'translate-y-0',
         ]"
     >
         <Navigation />
     </header>
-    <main class="pt-25 h-screen w-full">
+    <main class="pt-4 h-screen w-full">
         <router-view />
     </main>
 </template>
