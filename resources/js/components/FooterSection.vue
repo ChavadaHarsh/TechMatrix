@@ -14,7 +14,7 @@
                         class="w-36 h-20"
                         alt="Company Logo"
                     />
-                    <p class="text-gray-500 text-sm font-[500]">
+                    <p class="text-gray-500 text-md font-[500]">
                         {{ company.description }}
                     </p>
                 </div>
@@ -26,10 +26,10 @@
                         :key="index"
                         class="flex flex-row gap-6 items-start border-b border-gray-600 pb-4"
                     >
-                        <h3 class="uppercase text-[#00B5AC] font-[400] text-sm">
+                        <h3 class="uppercase text-[#00B5AC] font-[400] text-md">
                             {{ item.title }}
                         </h3>
-                        <span class="text-gray-300 text-sm">
+                        <span class="text-gray-300 text-md">
                             {{ item.value }}
                         </span>
                     </div>
@@ -43,11 +43,11 @@
                             class="group relative p-2 rounded-full bg-[#00B5AC] transition-all duration-500 ease-in-out transform hover:bg-[#1e1e1e] hover:scale-95"
                         >
                             <span
-                                class="absolute inset-0 rounded-full ring-0 group-hover:ring-2 group-hover:ring-[#00B5AC] transition-all duration-500 ease-in-out"
+                                class="absolute inset-0 rounded-full ring-0 group-hover:ring-4 group-hover:ring-[#00B5AC] transition-all duration-500 ease-in-out"
                             ></span>
                             <svg
                                 fill="white"
-                                class="relative w-4 h-4 transition-transform duration-500 ease-in-out group-hover:scale-110"
+                                class="relative w-5 h-5 transition-transform duration-500 ease-in-out group-hover:scale-110"
                                 viewBox="-337 273 123.5 256"
                                 xmlns="http://www.w3.org/2000/svg"
                             >
@@ -67,12 +67,12 @@
                             class="group relative p-2 rounded-full bg-[#00B5AC] transition-all duration-500 ease-in-out transform hover:bg-[#1e1e1e] hover:scale-95"
                         >
                             <span
-                                class="absolute inset-0 rounded-full ring-0 group-hover:ring-2 group-hover:ring-[#00B5AC] transition-all duration-500 ease-in-out"
+                                class="absolute inset-0 rounded-full ring-0 group-hover:ring-4 group-hover:ring-[#00B5AC] transition-all duration-500 ease-in-out"
                             ></span>
                             <svg
                                 fill="white"
                                 viewBox="0 0 24 24"
-                                class="relative w-4 h-4 transition-transform duration-500 ease-in-out group-hover:scale-110"
+                                class="relative w-5 h-5 transition-transform duration-500 ease-in-out group-hover:scale-110"
                                 xmlns="http://www.w3.org/2000/svg"
                             >
                                 <circle
@@ -97,7 +97,7 @@
                     >
                         What We Offer
                     </h3>
-                    <ul class="space-y-3 mt-2 text-sm text-gray-300">
+                    <ul class="space-y-3 mt-2 text-md text-gray-300">
                         <li
                             v-for="(service, index) in services"
                             :key="index"
@@ -113,7 +113,7 @@
                                 class="relative text-gray-500 transform rotate-180 transition-all duration-500 ease-in-out group-hover:text-[#00B5AC]"
                             >
                                 <span
-                                    class="absolute -top-2 -right-5 transition-transform duration-500 ease-in-out group-hover:translate-x-16"
+                                    class="absolute -top-2 -right-5 -translate-y-0.5 transition-transform duration-500 ease-in-out group-hover:translate-x-16"
                                 >
                                     ▶
                                 </span>
@@ -127,7 +127,7 @@
             </div>
 
             <!-- Bottom Bar -->
-            <div ref="bottom" class="text-center text-gray-400 text-sm mt-10">
+            <div ref="bottom" class="text-center text-gray-400 text-sm mt-16">
                 © {{ currentYear }}
                 <span class="text-white font-medium">{{ company.name }}</span> –
                 Providing the Right Technology Matrix. All rights reserved.

@@ -6,6 +6,7 @@
         <div
             v-for="(service, index) in ServiceData"
             :key="index"
+            ref="serviceCards"
             class="bg-white rounded-2xl min-w-56 shadow-[0_0_13px_-4px_rgb(0_0_0_/_17%)] transition duration-300 pt-12 pb-6 px-8 flex flex-col items-center text-center space-y-5 group"
         >
             <!-- Image -->
@@ -61,6 +62,9 @@ import image1 from "../../../assest/ServicesIcon/mobile_app.webp";
 import image2 from "../../../assest/ServicesIcon/web_app.webp";
 import image3 from "../../../assest/ServicesIcon/customize_solution.webp";
 import Line from "./Line_com.vue";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
     name: "Services",
@@ -93,6 +97,25 @@ export default {
                 },
             ],
         };
+    },
+    mounted() {
+        // Animate each card from right to left on scroll
+        this.$nextTick(() => {
+            this.$refs.serviceCards.forEach((card, i) => {
+                gsap.from(card, {
+                    x: 150,
+                    opacity: 0,
+                    duration: 0.5,
+                    ease: "power2.out",
+                    delay: i * 0.2,
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 100%",
+                        toggleActions: "play none none reverse",
+                    },
+                });
+            });
+        });
     },
 };
 </script>

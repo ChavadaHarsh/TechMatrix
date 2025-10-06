@@ -11,12 +11,19 @@
         <PageLayout>
             <Services />
             <SpecificSolution />
+            <About />
+            <GetInf />
+            <Clients />
         </PageLayout>
     </div>
 </template>
 
 <script>
 import PageLayout from "../../components/PageLayout.vue";
+import About from "./Home_com/About.vue";
+import Clients from "./Home_com/Clients.vue";
+import GetInf from "./Home_com/getInf.vue";
+
 import Services from "./Home_com/Services.vue";
 import Slider from "./Home_com/Silder.vue";
 import SpecificSolution from "./Home_com/SpecificSolution.vue";
@@ -28,6 +35,9 @@ export default {
         PageLayout,
         Services,
         SpecificSolution,
+        Clients,
+        GetInf,
+        About,
     },
 };
 </script>
