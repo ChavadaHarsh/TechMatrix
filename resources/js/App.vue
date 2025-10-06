@@ -1,23 +1,34 @@
 <template>
-    <header
-        :class="[
-            'sticky top-0 left-0 w-full z-50 bg-white  transition-transform duration-500 overflow-hidden',
-            isHidden ? '-translate-y-full' : 'translate-y-0',
-        ]"
-    >
-        <Navigation />
-    </header>
-    <main class="pt-4 h-screen w-full">
-        <router-view />
-    </main>
+    <div>
+        <!-- Header -->
+        <header
+            :class="[
+                'fixed top-0 left-0 w-full z-50 bg-white shadow-md transition-transform duration-500',
+                isHidden ? '-translate-y-full' : 'translate-y-0',
+            ]"
+        >
+            <Navigation />
+        </header>
+
+        <!-- Main Content -->
+        <main class="pt-28 min-h-screen w-full">
+            <router-view />
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <FooterSection />
+        </footer>
+    </div>
 </template>
 
 <script>
 import Navigation from "./components/navigation.vue";
+import FooterSection from "./components/FooterSection.vue";
 
 export default {
     name: "AppHeader",
-    components: { Navigation },
+    components: { Navigation, FooterSection },
     data() {
         return {
             lastScroll: 0,
@@ -33,11 +44,13 @@ export default {
     methods: {
         handleScroll() {
             const currentScroll = window.scrollY;
-            if (currentScroll > this.lastScroll && currentScroll > 50) {
-                this.isHidden = true; // hide on scroll down
+
+            if (currentScroll > this.lastScroll && currentScroll > 80) {
+                this.isHidden = true;
             } else {
-                this.isHidden = false; // show on scroll up
+                this.isHidden = false;
             }
+
             this.lastScroll = currentScroll;
         },
     },
