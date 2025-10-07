@@ -1,16 +1,16 @@
 <template>
-    <section class="w-full bg-white py-16 px-6 lg:px-20 font-[Poppins]">
+    <section class="w-full bg-white py-16 px-4 sm:px-8 lg:px-20 font-[Poppins]">
         <!-- Heading -->
-        <div class="space-y-2 mb-14 text-center">
+        <div class="space-y-2 mb-12 text-center">
             <h3
                 ref="title"
-                class="text-[#00B5AC] text-xl font-semibold uppercase tracking-widest"
+                class="text-[#00B5AC] text-base sm:text-lg md:text-xl font-semibold uppercase tracking-widest"
             >
                 Why TechMatrix?
             </h3>
             <h2
                 ref="content"
-                class="text-2xl md:text-3xl font-bold text-gray-900 tracking-widest"
+                class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 tracking-wide"
             >
                 Completely Disintermediate Excellent Skills
             </h2>
@@ -19,33 +19,38 @@
         <!-- Features Grid -->
         <div
             ref="gridDev"
-            class="px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 cursor-pointer"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-14 cursor-pointer"
         >
             <div
-                ref="cards"
                 v-for="(item, index) in features"
                 :key="index"
-                class="flex flex-col space-y-2 justify-between hover:bg-[#00B5AC] rounded-lg p-7 group"
+                ref="cards"
+                class="flex flex-col justify-between bg-white hover:bg-[#00B5AC] shadow-md hover:shadow-xl rounded-2xl p-6 sm:p-7 lg:p-8 group transition-all duration-500"
             >
-                <div class="flex flex-row justify-between">
+                <!-- Top -->
+                <div class="flex flex-row justify-between items-center">
                     <img
                         :src="item.icon"
                         :alt="item.title"
-                        class="w-20 h-20 invert-[0] group-hover:invert group-hover:brightness-150 transition-all duration-500"
+                        class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 invert-[0] group-hover:invert group-hover:brightness-150 transition-all duration-500"
                     />
                     <h1
-                        class="text-6xl text-white font-[700] group-hover:text-gray-300"
+                        class="text-4xl sm:text-5xl lg:text-6xl font-bold group-hover:text-gray-300 text-white transition-all duration-300"
                     >
                         0{{ index + 1 }}
                     </h1>
                 </div>
+
+                <!-- Title -->
                 <h4
-                    class="text-xl font-[600] text-gray-900 group-hover:text-white"
+                    class="text-lg sm:text-xl font-semibold text-gray-900 mt-4 group-hover:text-white transition-all duration-300"
                 >
                     {{ item.title }}
                 </h4>
+
+                <!-- Description -->
                 <p
-                    class="text-gray-600 text-lg max-w-xs group-hover:text-white"
+                    class="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed group-hover:text-white transition-all duration-300 mt-2"
                 >
                     {{ item.description }}
                 </p>

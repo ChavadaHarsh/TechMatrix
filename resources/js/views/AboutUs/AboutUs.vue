@@ -26,10 +26,12 @@
                 />
             </div>
         </section>
+        <Vission />
     </PageLayout>
     <CustomImage />
     <PageLayout>
         <Skill />
+        <Information />
     </PageLayout>
 </template>
 
@@ -39,10 +41,12 @@ import { gsap } from "gsap";
 import PageLayout from "../../components/PageLayout.vue";
 import CustomImage from "./About_com/CustomImage.vue";
 import Skill from "./About_com/Skill.vue";
+import Information from "./About_com/Information.vue";
+import Vission from "./About_com/Vision.vue";
 
 export default {
     name: "AboutUs",
-    components: { PageLayout, CustomImage, Skill },
+    components: { PageLayout, CustomImage, Skill, Vission, Information },
 
     setup() {
         const content = ref(null);
