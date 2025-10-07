@@ -11,6 +11,7 @@
         <PageLayout>
             <Services />
             <SpecificSolution />
+
             <About />
             <GetInf />
             <Clients />
@@ -34,6 +35,7 @@ export default {
         Slider,
         PageLayout,
         Services,
+
         SpecificSolution,
         Clients,
         GetInf,

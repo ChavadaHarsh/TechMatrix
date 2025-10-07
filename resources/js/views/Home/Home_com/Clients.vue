@@ -69,7 +69,7 @@ export default {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: this.$refs.clientsSection,
-                start: "top 80%",
+                start: "top 95%",
                 toggleActions: "play none none reverse",
             },
         });
@@ -100,8 +100,8 @@ export default {
             {
                 opacity: 1,
                 x: 0,
-                duration: 0.6,
-                stagger: 0.12,
+                duration: 0.2,
+                stagger: 0.1,
                 ease: "power3.out",
             },
             "+=0.15"

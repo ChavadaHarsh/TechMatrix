@@ -7,7 +7,9 @@
                 isHidden ? '-translate-y-full' : 'translate-y-0',
             ]"
         >
-            <Navigation />
+            <PageLayout>
+                <Navigation />
+            </PageLayout>
         </header>
 
         <!-- Main Content -->
@@ -37,10 +39,11 @@
 <script>
 import Navigation from "./components/navigation.vue";
 import FooterSection from "./components/FooterSection.vue";
+import PageLayout from "./components/PageLayout.vue";
 
 export default {
     name: "AppHeader",
-    components: { Navigation, FooterSection },
+    components: { Navigation, FooterSection, PageLayout },
     data() {
         return {
             lastScroll: 0,

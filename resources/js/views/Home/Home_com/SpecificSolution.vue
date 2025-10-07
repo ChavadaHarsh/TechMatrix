@@ -18,16 +18,21 @@
             Website Designing & Web Development, Branding, SEO Works?
         </p>
     </div>
+    <Solution />
 </template>
 
 <script>
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Solution from "./Solution.vue";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
     name: "SpecificSolution",
+    components: {
+        Solution,
+    },
     mounted() {
         const tl = gsap.timeline({
             scrollTrigger: {

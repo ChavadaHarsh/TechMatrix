@@ -176,7 +176,7 @@ export default {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: this.$refs.footerSection,
-                start: "top 80%",
+                start: "top 85%",
                 toggleActions: "play none none reverse",
             },
         });

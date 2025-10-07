@@ -1,6 +1,6 @@
 <template>
     <nav
-        class="flex items-center m-auto w-[98%] lg:w-[70%] justify-between px-10 md:px-2 lg:px-4 py-4 bg-white text-white"
+        class="flex items-center w-full justify-between px-5 lg:px-10 py-4 bg-white text-white"
     >
         <!-- Left Logo -->
         <img
@@ -14,7 +14,7 @@
         <div ref="menuButton">
             <button
                 @click="toggleMenu"
-                class="text-3xl focus:outline-none cursor-pointer hover:scale-105 hover:bg-[#00B5AC] rounded-md p-1 active:scale-95 duration-300"
+                class="text-3xl focus:outline-none cursor-pointer transalte-x-0 xl:-translate-x-30 hover:scale-105 hover:bg-[#00B5AC] rounded-md p-1 active:scale-95 duration-300"
             >
                 <MenuIcon color="black" />
             </button>
@@ -99,7 +99,7 @@ export default {
                         "Ecommerce Solution",
                     ],
                 },
-                { label: "About Us", to: "/about" },
+                { label: "AboutUs", to: "/aboutUs" },
                 { label: "Contact", to: "/contact" },
                 {
                     label: "Products",
