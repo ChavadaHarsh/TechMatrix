@@ -28,6 +28,9 @@
         </section>
     </PageLayout>
     <CustomImage />
+    <PageLayout>
+        <Skill />
+    </PageLayout>
 </template>
 
 <script>
@@ -35,10 +38,11 @@ import { ref, onMounted } from "vue";
 import { gsap } from "gsap";
 import PageLayout from "../../components/PageLayout.vue";
 import CustomImage from "./About_com/CustomImage.vue";
+import Skill from "./About_com/Skill.vue";
 
 export default {
     name: "AboutUs",
-    components: { PageLayout, CustomImage },
+    components: { PageLayout, CustomImage, Skill },
 
     setup() {
         const content = ref(null);
