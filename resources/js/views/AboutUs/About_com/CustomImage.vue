@@ -1,7 +1,7 @@
 <template>
     <div
         ref="imageContainer"
-        class="w-full flex justify-center items-center py-10 mt-10 bg-white overflow-hidden"
+        class="w-full flex justify-center items-center py-10 mt-36 bg-white overflow-hidden"
     >
         <img
             ref="image"
