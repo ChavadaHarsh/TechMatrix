@@ -19,15 +19,17 @@
                 <span> some feedback for us? </span>
                 <span>contact us any time.</span>
             </div>
-            <button
-                ref="Button"
-                class="relative overflow-hidden px-10 py-4 text-md lg:text-md xl:text-2xl bg-black text-white font-medium rounded-4xl cursor-pointer group transition-all duration-300 ease-in-out"
-            >
-                <span class="relative z-10">Contact Us</span>
-                <span
-                    class="absolute inset-0 bg-gray-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-in rounded-4xl"
-                ></span>
-            </button>
+            <router-link to="/contact">
+                <button
+                    ref="Button"
+                    class="relative overflow-hidden px-10 py-4 text-md lg:text-md xl:text-2xl bg-black text-white font-medium rounded-4xl cursor-pointer group transition-all duration-300 ease-in-out"
+                >
+                    <span class="relative z-10">Contact Us</span>
+                    <span
+                        class="absolute inset-0 bg-gray-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-in rounded-4xl"
+                    ></span>
+                </button>
+            </router-link>
         </div>
     </div>
 </template>
