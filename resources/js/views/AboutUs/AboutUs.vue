@@ -32,6 +32,8 @@
     <PageLayout>
         <Skill />
         <Information />
+        <DetailDisplay />
+        <Content />
     </PageLayout>
 </template>
 
@@ -43,10 +45,20 @@ import CustomImage from "./About_com/CustomImage.vue";
 import Skill from "./About_com/Skill.vue";
 import Information from "./About_com/Information.vue";
 import Vission from "./About_com/Vision.vue";
+import Content from "./About_com/Contact.vue";
+import DetailDisplay from "./About_com/DetailDisplay.vue";
 
 export default {
     name: "AboutUs",
-    components: { PageLayout, CustomImage, Skill, Vission, Information },
+    components: {
+        PageLayout,
+        CustomImage,
+        Skill,
+        Vission,
+        Information,
+        Content,
+        DetailDisplay,
+    },
 
     setup() {
         const content = ref(null);
