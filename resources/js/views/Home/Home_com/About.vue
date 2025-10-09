@@ -19,7 +19,7 @@
             <!-- Decorative Wavy Line -->
             <div class="relative mb-2">
                 <div
-                    class="w-24 h-[6px] bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%226%22 viewBox=%220%200%20120%206%22><path d=%22M0 3 Q5 0 10 3 T20 3 T30 3 T40 3 T50 3 T60 3 T70 3 T80 3 T90 3 T100 3 T110 3 T120 3%22 stroke=%22%2300B5AC%22 stroke-width=%222%22 fill=%22none%22 stroke-linecap=%22round%22/></svg>')] bg-no-repeat bg-contain"
+                    class="w-24 h-[6px] bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%226%22 viewBox=%220 0 120 6%22><path d=%22M0 3 Q5 0 10 3 T20 3 T30 3 T40 3 T50 3 T60 3 T70 3 T80 3 T90 3 T100 3 T110 3 T120 3%22 stroke=%22%2300B5AC%22 stroke-width=%222%22 fill=%22none%22 stroke-linecap=%22round%22/></svg>')] bg-no-repeat bg-contain"
                 ></div>
             </div>
 
@@ -43,20 +43,21 @@
                 <div
                     v-for="(stat, i) in stats"
                     :key="i"
-                    class="flex flex-col items-center justify-center bg-white shadow-md px-8 py-6 text-center transition-all duration-300 hover:shadow-lg rounded-xl"
+                    class="flex flex-row bg-white shadow-md px-8 py-6 text-center transition-all duration-300 hover:shadow-lg rounded-xl"
                 >
-                    <div
-                        class="text-3xl mb-2 text-[#00B5AC]"
-                        v-html="stat.icon"
-                    ></div>
-                    <h3
-                        class="text-sm font-semibold text-gray-600 uppercase tracking-wider"
-                    >
-                        {{ stat.title }}
-                    </h3>
-                    <p class="text-2xl font-bold text-[#00B5AC] mt-1">
-                        {{ stat.value }}<span class="text-gray-600">+</span>
-                    </p>
+                    <div class="text-4xl mb-2 text-[#00B5AC] flex items-center">
+                        <FontAwesomeIcon :icon="stat.icon" />
+                    </div>
+                    <div class="flex flex-col gap- items-start">
+                        <h3
+                            class="text-sm font-semibold text-gray-600 uppercase tracking-wider"
+                        >
+                            {{ stat.title }}
+                        </h3>
+                        <p class="text-2xl font-bold text-[#00B5AC] mt-1">
+                            {{ stat.value }}<span class="text-gray-600">+</span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,40 +65,40 @@
 </template>
 
 <script>
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+    faGlobe,
+    faClock,
+    faUser,
+    faMobileScreenButton,
+} from "@fortawesome/free-solid-svg-icons";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 gsap.registerPlugin(ScrollTrigger);
+
+// Add icons to the library
+library.add(faGlobe, faClock, faUser, faMobileScreenButton);
 
 export default {
     name: "AboutStats",
+    components: { FontAwesomeIcon },
     data() {
         return {
             stats: [
                 {
                     title: "Project Completed",
                     value: 100,
-                    icon: '<i class="fa-solid fa-mobile-screen-button"></i>',
+                    icon: faMobileScreenButton,
                 },
-                {
-                    title: "Website Developed",
-                    value: 50,
-                    icon: '<i class="fa-solid fa-globe"></i>',
-                },
-                {
-                    title: "Few Stats About Us",
-                    value: 15,
-                    icon: '<i class="fa-solid fa-clock"></i>',
-                },
-                {
-                    title: "Employees",
-                    value: 10,
-                    icon: '<i class="fa-solid fa-user"></i>',
-                },
+                { title: "Website Developed", value: 50, icon: faGlobe },
+                { title: "Few Stats About Us", value: 15, icon: faClock },
+                { title: "Employees", value: 10, icon: faUser },
             ],
         };
     },
     mounted() {
-        // Image animation - from left
         gsap.from(this.$refs.imageSection, {
             scrollTrigger: {
                 trigger: this.$refs.imageSection,
@@ -110,7 +111,6 @@ export default {
             ease: "power3.out",
         });
 
-        // Text and content animation - from right
         gsap.from(this.$refs.contentSection, {
             scrollTrigger: {
                 trigger: this.$refs.contentSection,
